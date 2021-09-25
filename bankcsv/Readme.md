@@ -26,11 +26,4 @@ Date, Money, Check Number, Payee, Category, Account
 
 ### Data Dictionary
 
-|field|type|format|comment|
-|-----|----|------|-------|
-|Date|date|mm-dd-yyyy||
-|Money|decimal|use decimal to prevent float rounding|
-|Check Number|string|"dddd"|use string because we don't need to do math with check numbers|
-|Payee|string||Maybe need to compile a list?|
-|Category|Enum|Enum|Make a list of categories|
-|Account|Enum|Enum|Two accounts, checking, credit cards |
+

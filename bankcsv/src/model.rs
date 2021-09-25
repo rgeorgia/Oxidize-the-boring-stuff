@@ -18,11 +18,17 @@ pub enum PaymentType {
     Transfer,
 }
 
-#[derive(Debug)]
-pub struct SpendingEvent {
+#[derive(Debug, Deserialize)]
+pub struct CheckingRecord {
+    date: String,
+    amount: f64,
+    check_number: String,
+    payee: String,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct CreditCardRecord {
     date: String,
     amount: f64,
     payee: String,
-    category: Categories,
 }
-
