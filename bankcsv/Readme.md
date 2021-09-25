@@ -5,7 +5,7 @@
 Read in the csv files from the data directory and create a clean csv file in the clean-data directory.
 
 1. Read the file
-2. Parse columns into __Account__Record struct
+2. Parse columns into *Account*Record struct
 3. Write clean data to clean-data/file.csv
 
 ### Parsing Content (step 2)
