@@ -25,6 +25,7 @@ fn main() {
              .required(false))
          .get_matches();
 
+
     let input = args.value_of("input").unwrap_or("-");
 
     if input == "-" {
