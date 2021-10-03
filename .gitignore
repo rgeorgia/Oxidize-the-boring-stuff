@@ -12,5 +12,5 @@ Cargo.lock
 
 # Project specific
 /bankcsv/data/*.csv
-bankcsv/data/*.csv
+Checking1.csv
 .idea/

@@ -19,18 +19,12 @@ fn main() {
      let args = App::new("bankcsv")
          .version("0.1")
          .about("Searches for patterns")
-         .arg(Arg::with_name("pattern")
-             .help("Pattern to search for")
-             .takes_value(true)
-             .required(true))
          .arg(Arg::with_name("input")
              .help("file to search")
              .takes_value(true)
              .required(false))
          .get_matches();
 
-    let pattern = args.value_of("pattern").unwrap();
-    let re = Regex::new(pattern).unwrap();
     let input = args.value_of("input").unwrap_or("-");
 
     if input == "-" {
