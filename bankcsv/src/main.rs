@@ -1,40 +1,73 @@
-use std::fs::File;
-use std::io;
-use std::io::BufReader ;
-use std::io::prelude::* ;
-use regex::{Regex};
-use clap::{App, Arg};
+extern crate csv;
+extern crate serde;
+// This lets us write `#[derive(Deserialize)]`.
+#[macro_use]
+extern crate serde_derive;
 
-fn process_lines<T: BufRead + Sized>(reader: T, re: Regex) {
-    for line_ in reader.lines() {
-        let line = line_.unwrap();
-        match re.find(&line) {
-            None => (),
-            Some(_) => println!("{}", line),
-        }
+use std::env;
+use std::error::Error;
+use std::ffi::OsString;
+use std::fs::File;
+use std::io::Read;
+use std::process;
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "PascalCase")]
+struct Checking {
+    date: String,
+    amount: Option<f64>,
+    star: String,
+    check_number: String,
+    payee: String,
+}
+
+struct CreditCard {
+    date: String,
+    amount: Option<f64>,
+    star: String,
+    other: String,
+    payee: String,
+}
+/// Returns the first positional argument sent to this process. If there are no
+/// positional arguments, then this returns an error.
+fn get_first_arg() -> Result<OsString, Box<dyn Error>> {
+    match env::args_os().nth(1) {
+        None => Err(From::from("expected 1 argument, but got none")),
+        Some(file_path) => Ok(file_path),
     }
 }
 
+/*
+I had to add a header to the Checking2.csv and CreditCard4.csv, otherwise it did not work
+Need to figure out how to do a ReaderBuilder from path then unwrap to use has_headers(false)
+Here's what I did. I got the path to the file ( get_first_arg()? ), the read the contents into a String
+then used ReaderBuilder::new() to control what is read.
+Now I need to create a fn to read the contents are return the String
+*/
+
+fn run() -> Result<(), Box<dyn Error>> {
+    let file_path = get_first_arg()?;
+    let mut file_data = File::open(file_path).unwrap();
+    let mut contents = String::new();
+    file_data.read_to_string(&mut contents).unwrap();
+
+    let mut rdr = csv::ReaderBuilder::new()
+        .has_headers(false)
+        .double_quote(true)
+        .flexible(true)
+        .from_reader(contents.as_bytes());
+
+    for result in rdr.deserialize() {
+        let record: Checking = result?;
+        println!("{:?}", record);
+    }
+
+    Ok(())
+}
+
 fn main() {
-     let args = App::new("bankcsv")
-         .version("0.1")
-         .about("Searches for patterns")
-         .arg(Arg::with_name("input")
-             .help("file to search")
-             .takes_value(true)
-             .required(false))
-         .get_matches();
-
-
-    let input = args.value_of("input").unwrap_or("-");
-
-    if input == "-" {
-        let stdin = io::stdin() ;
-        let reader = stdin.lock();
-        process_lines(reader, re) ;
-    } else {
-        let f = File::open(input).unwrap();
-        let reader = BufReader::new(f);
-        process_lines(reader,re) ;
+    if let Err(err) = run() {
+        println!("{}", err);
+        process::exit(1);
     }
 }
