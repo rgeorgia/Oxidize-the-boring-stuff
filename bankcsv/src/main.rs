@@ -1,3 +1,5 @@
+mod model;
+
 extern crate csv;
 extern crate serde;
 // This lets us write `#[derive(Deserialize)]`.

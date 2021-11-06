@@ -19,16 +19,19 @@ pub enum PaymentType {
 }
 
 #[derive(Debug, Deserialize)]
-pub struct CheckingRecord {
+#[serde(rename_all = "PascalCase")]
+struct Checking {
     date: String,
-    amount: f64,
+    amount: Option<f64>,
+    star: String,
     check_number: String,
     payee: String,
 }
 
-#[derive(Debug, Deserialize)]
-pub struct CreditCardRecord {
+struct CreditCard {
     date: String,
-    amount: f64,
+    amount: Option<f64>,
+    star: String,
+    other: String,
     payee: String,
 }
