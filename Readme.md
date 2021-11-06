@@ -17,10 +17,5 @@ That is what I want to do... well kind of. Maybe a few modifications.
 First. I less than a noob when it comes to Rust. In fact, I can't even spell Wrust without Google. Second, I *want* to try to complete, in Rust, all the exercises listed from Al's book. However, there maybe a few itches I have that I will tackle.
 
 ## Oxidize the boring stuff outline
-- Read csv file downloaded from your bank,
-  - Checking or Credit Card
-  - Format the output, add categories
-  - Save to an Excel spreadsheet
-  - Advanced: save to database (sqlite?)
+- Read csv file downloaded from your bank, then write csv or excel file
 - CRUD stuff from database created in the first challenge.
-  - Read, query and create reports for spending "habits."
