@@ -1,4 +1,4 @@
-# Welcome to the Oxidize-the-boring-stuff wiki!
+# Welcome to the Oxidize-the-boring-stuff
 
 Oxidize the boring stuff is my attempt to learn [Rust](https://www.rust-lang.org/) while creating useful apps. The idea was taken from the very popular book called [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) by Al Sweigart.
 
