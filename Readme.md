@@ -18,4 +18,4 @@ First. I less than a noob when it comes to Rust. In fact, I can't even spell Wru
 
 ## Oxidize the boring stuff outline
 - Read csv file downloaded from your bank, then write csv or excel file
-- CRUD stuff from database created in the first challenge.
+- Read csv (or Excel) file and export to sqlite database
