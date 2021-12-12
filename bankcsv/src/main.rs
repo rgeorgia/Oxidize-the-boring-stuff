@@ -15,7 +15,7 @@ use std::process;
 
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "PascalCase")]
-struct Checking {
+struct TransactionEvent {
     date: String,
     amount: Option<f64>,
     star: String,
@@ -23,13 +23,6 @@ struct Checking {
     payee: String,
 }
 
-struct CreditCard {
-    date: String,
-    amount: Option<f64>,
-    star: String,
-    other: String,
-    payee: String,
-}
 /// Returns the first positional argument sent to this process. If there are no
 /// positional arguments, then this returns an error.
 fn get_first_arg() -> Result<OsString, Box<dyn Error>> {
@@ -42,7 +35,7 @@ fn get_first_arg() -> Result<OsString, Box<dyn Error>> {
 /*
 I had to add a header to the Checking2.csv and CreditCard4.csv, otherwise it did not work
 Need to figure out how to do a ReaderBuilder from path then unwrap to use has_headers(false)
-Here's what I did. I got the path to the file ( get_first_arg()? ), the read the contents into a String
+Here's what I did. I got the path to the file ( get_first_arg()? ), then read the contents into a String
 then used ReaderBuilder::new() to control what is read.
 Now I need to create a fn to read the contents are return the String
 */
@@ -60,8 +53,11 @@ fn run() -> Result<(), Box<dyn Error>> {
         .from_reader(contents.as_bytes());
 
     for result in rdr.deserialize() {
-        let record: Checking = result?;
-        println!("{:?}", record);
+        let record: TransactionEvent = result?;
+        println!("{}", record.date);
+        println!("{}", record.payee);
+        println!("{:?}", record.amount);
+        println!("{}\n", record.check_number);
     }
 
     Ok(())
