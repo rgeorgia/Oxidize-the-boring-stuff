@@ -20,18 +20,10 @@ pub enum PaymentType {
 
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "PascalCase")]
-struct Checking {
+struct TransactionEvent {
     date: String,
     amount: Option<f64>,
     star: String,
     check_number: String,
-    payee: String,
-}
-
-struct CreditCard {
-    date: String,
-    amount: Option<f64>,
-    star: String,
-    other: String,
     payee: String,
 }

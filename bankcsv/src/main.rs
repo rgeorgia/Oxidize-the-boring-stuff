@@ -56,7 +56,7 @@ fn run() -> Result<(), Box<dyn Error>> {
         let record: TransactionEvent = result?;
         println!("{}", record.date);
         println!("{}", record.payee);
-        println!("{:?}", record.amount);
+        println!("${}", record.amount.unwrap());
         println!("{}\n", record.check_number);
     }
 
