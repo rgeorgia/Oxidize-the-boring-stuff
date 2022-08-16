@@ -33,7 +33,7 @@ fn get_first_arg() -> Result<OsString, Box<dyn Error>> {
 }
 
 /*
-I had to add a header to the Checking2.csv and CreditCard4.csv, otherwise it did not work
+I had to add a header to the Checking2_with-heading.csv and CreditCard4.csv, otherwise it did not work
 Need to figure out how to do a ReaderBuilder from path then unwrap to use has_headers(false)
 Here's what I did. I got the path to the file ( get_first_arg()? ), then read the contents into a String
 then used ReaderBuilder::new() to control what is read.
