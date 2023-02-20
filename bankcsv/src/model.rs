@@ -1,4 +1,14 @@
 ///model.rs - module that models the data
+extern crate serde;
+// This lets us write `#[derive(Deserialize)]`.
+#[allow(unused_imports)]
+use serde_derive;
+
+pub const DATE: usize = 0;
+pub const AMOUNT: usize = 1;
+pub const CHECKNUMBER: usize = 3;
+pub const RAW_PAYEE: usize = 4;
+
 #[allow(dead_code)]
 pub enum Categories {
     Gas,
@@ -21,14 +31,12 @@ pub enum PaymentType {
 }
 
 #[allow(dead_code)]
-#[derive(Debug, Deserialize)]
-#[serde(rename_all = "PascalCase")]
-struct BankStatement {
-    date: String,
-    amount: Option<f64>,
-    star: String,
-    check_number: String,
-    raw_payee: String,
-    payee: String,
-    category: Categories,
+#[derive(Debug)]
+pub struct BankStatement {
+    pub date: String,
+    pub amount: Option<f64>,
+    pub check_number: String,
+    pub raw_payee: String,
+    pub payee: String,
+    pub category: String,
 }
