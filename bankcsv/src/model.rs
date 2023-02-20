@@ -23,10 +23,12 @@ pub enum PaymentType {
 #[allow(dead_code)]
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "PascalCase")]
-struct TransactionEvent {
+struct BankStatement {
     date: String,
     amount: Option<f64>,
     star: String,
     check_number: String,
+    raw_payee: String,
     payee: String,
+    category: Categories,
 }
