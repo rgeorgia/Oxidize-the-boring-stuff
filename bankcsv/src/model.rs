@@ -1,5 +1,5 @@
 ///model.rs - module that models the data
-
+#[allow(dead_code)]
 pub enum Categories {
     Gas,
     Entertainment,
@@ -10,14 +10,17 @@ pub enum Categories {
     Clothing,
     Other,
     Payment,
+    Giving,
 }
 
+#[allow(dead_code)]
 pub enum PaymentType {
     Payroll,
     Interest,
     Transfer,
 }
 
+#[allow(dead_code)]
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "PascalCase")]
 struct TransactionEvent {
