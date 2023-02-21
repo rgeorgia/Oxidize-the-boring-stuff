@@ -34,7 +34,7 @@ pub enum PaymentType {
 #[derive(Debug)]
 pub struct BankStatement {
     pub date: String,
-    pub amount: Option<f64>,
+    pub amount: f32,
     pub check_number: String,
     pub raw_payee: String,
     pub payee: String,
