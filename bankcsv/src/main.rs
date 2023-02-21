@@ -40,12 +40,22 @@ fn main() -> Result<(), Error> {
 
     for record in reader.records() {
         let record = record?;
+        let bank_row = model::BankStatement{
+            date:&record[DATE].to_string(),
+            amount: &record[AMOUNT],
+            check_number: &record[CHECKNUMBER].to_string(),
+            raw_payee: &record[RAW_PAYEE].to_string()
+            payee: String::from("payee"),
+            category: String::from("category"),
+        }
+
         println!(
             "{} {} {} {}",
             &record[DATE], &record[AMOUNT], &record[CHECKNUMBER], &record[RAW_PAYEE]
         );
     }
-    println!("len {}", csv_file.len());
+    println!("len of csv file: {}", csv_file.len());
+    println!("len of bank records is: {}", bank_records.len());
 
     Ok(())
 }
