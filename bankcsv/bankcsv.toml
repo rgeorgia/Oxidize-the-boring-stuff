@@ -1,0 +1,34 @@
+title = "TOML file for bankcsv program."
+# This file contains data used by the bankcsv file, like category names, short names, et al
+
+categories = [
+    "Groceries",
+    "Gas",
+    "House Hold",
+    "Dining Out",
+    "Subscriptions",
+    "Utilites",
+    "Perscriptsion",
+    "Medical",
+    "Taxes", 
+    "Others"
+]
+
+short_names = [
+    "Food Lion",
+    "Ingles",
+    "CVS",
+    "Pharmacy",
+    "Lowes Home Improvement",
+    "Ace",
+    "Amazon"
+]
+
+subscriptions = [
+    "Netflix",
+    "Hulu",
+    "Prime",
+    "Spotify",
+    "Apple",
+    "Apple Music"
+]
