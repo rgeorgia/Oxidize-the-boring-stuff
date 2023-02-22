@@ -11,7 +11,9 @@ categories = [
     "Perscriptsion",
     "Medical",
     "Taxes", 
-    "Others"
+    "Others",
+    "Deposit",
+    "Check",
 ]
 
 short_names = [
@@ -20,8 +22,17 @@ short_names = [
     "CVS",
     "Pharmacy",
     "Lowes Home Improvement",
-    "Ace",
-    "Amazon"
+    "Saines",
+    "Amazon",
+    "Bricktree",
+    "Untapped",
+    "Wells Fargo",
+    "Emerald Commons",
+    "Consumer Cellular",
+    "Bridgecrest",
+    "Food Court",
+    "Wal-Mart",
+    "DUNKIN",
 ]
 
 subscriptions = [
