@@ -10,20 +10,6 @@ pub const CHECKNUMBER: usize = 3;
 pub const RAW_PAYEE: usize = 4;
 
 #[allow(dead_code)]
-pub enum Categories {
-    Gas,
-    Entertainment,
-    Utility,
-    Medical,
-    Groceries,
-    Spirits,
-    Clothing,
-    Other,
-    Payment,
-    Giving,
-}
-
-#[allow(dead_code)]
 pub enum PaymentType {
     Payroll,
     Interest,

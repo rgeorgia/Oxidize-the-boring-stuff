@@ -19,7 +19,7 @@ struct Opt {
     input: PathBuf,
 
     //// Output file, stdout if not present
-    #[structopt(parse(from_os_str))]
+    #[structopt(parse(from_os_str), long)]
     output: Option<PathBuf>,
 
     /// Activate verbose mode
@@ -30,6 +30,8 @@ struct Opt {
 fn main() -> Result<(), Error> {
     let opt = Opt::from_args();
     println!("{:?}", opt);
+    println!("{}", opt.verbose);
+    println!("{:?}", opt.output);
 
     let csv_file = fs::read_to_string(opt.input)?;
     let mut bank_records = Vec::new();
@@ -57,6 +59,7 @@ fn main() -> Result<(), Error> {
         "len of bank records capacity is: {}",
         bank_records.capacity()
     );
+    println!("{:?}", bank_records[12].amount);
 
     Ok(())
 }

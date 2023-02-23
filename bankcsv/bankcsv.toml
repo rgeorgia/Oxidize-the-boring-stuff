@@ -1,45 +1,46 @@
 title = "TOML file for bankcsv program."
 # This file contains data used by the bankcsv file, like category names, short names, et al
 
-categories = [
-    "Groceries",
-    "Gas",
-    "House Hold",
-    "Dining Out",
-    "Subscriptions",
-    "Utilites",
-    "Perscriptsion",
-    "Medical",
-    "Taxes", 
-    "Others",
-    "Deposit",
-    "Check",
-]
-
-short_names = [
-    "Food Lion",
-    "Ingles",
-    "CVS",
-    "Pharmacy",
-    "Lowes Home Improvement",
-    "Saines",
-    "Amazon",
-    "Bricktree",
-    "Untapped",
-    "Wells Fargo",
-    "Emerald Commons",
-    "Consumer Cellular",
-    "Bridgecrest",
-    "Food Court",
-    "Wal-Mart",
-    "DUNKIN",
-]
-
-subscriptions = [
-    "Netflix",
-    "Hulu",
-    "Prime",
-    "Spotify",
-    "Apple",
-    "Apple Music"
-]
+Food_Lion = "Groceries"
+Ingles = "Groceries"
+CVS = "Perscriptsion"
+Pharmacy = "Perscriptsion"
+Lowes_Home = "House Hold"
+Saines = "House Hold"
+Amazon = "Amazon"
+Bricktree = "Entertainment"
+Untapped = "Entertainment"
+Wells_Fargo = "Deposit"
+Emerald_Commons = "Dining"
+Consumer_Cellular = "Utilities"
+Bridgecrest = "Investment"
+Food_Court = "Dining"
+Wal-Mart = "Groceries"
+DUNKIN = "Dining"
+ABC_BOA = "Spirits"
+KROGER = "Groceries"
+HOMESHIELD = "Insurance"
+PENN_NATIONAL = "Insurance"
+Ancient_Faith = "Giving"
+DUKE_ENERGY_ = "Utilities"
+BOOKS_A_MILLION = "Books"
+Barnes_and_Nobl = "Books"
+CHASE_CREDIT = "Credit Card"
+VISA = "Credit Card"
+AMERICAN_FUNDS = "Investment"
+MORTGAGE = "Morgage"
+DOLLAR_GENERAL = "Other"
+Outback = "Entertainment"
+Zips = "Entertainment"
+BOB_EVANS = "Dining"
+HOBBYLOBB = "House Hold"
+Spectrum = ["Utilities", "Cable"]
+CONSUMER_CELLULAR = ["Utilities", "Cell Phone"]
+Netflix = "Subscription"
+Hulu = "Subscription"
+Prime = "Subscription"
+Spotify = "Subscription"
+Apple = "Subscription"
+Digital_Ocean = "Subscription"
+Roku = "Subscription"
+Godaddy = "Subscription"
