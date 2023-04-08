@@ -9,7 +9,7 @@ use csv::Error;
 use std::{fs, path::PathBuf};
 use structopt::StructOpt;
 
-use model::{AMOUNT, CHECKNUMBER, DATE, RAW_PAYEE};
+use model::{AMOUNT, CHECK_NUMBER, DATE, RAW_PAYEE};
 
 #[derive(Debug, StructOpt)]
 #[structopt(name = "bankcsv", about = "Read and clean bank statement csv file")]
@@ -39,18 +39,16 @@ fn main() -> Result<(), Error> {
     let mut reader = csv::ReaderBuilder::new()
         .has_headers(false)
         .from_reader(csv_file.as_bytes());
-    let mut count = 1;
     for record in reader.records() {
         let record = record?;
         let bank_row = model::BankStatement {
             date: String::from(&record[DATE]),
             amount: record[AMOUNT].parse::<f32>().unwrap(),
-            check_number: String::from(&record[CHECKNUMBER]),
+            check_number: String::from(&record[CHECK_NUMBER]),
             raw_payee: String::from(&record[RAW_PAYEE]),
             payee: String::from("payee"),
             category: String::from("category"),
         };
-        count += 1;
         bank_records.push(bank_row)
     }
     println!("len of csv file: {:?}", csv_file.split("\n").count());
