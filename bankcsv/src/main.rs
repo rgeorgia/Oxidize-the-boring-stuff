@@ -1,11 +1,12 @@
-mod model;
 mod dictionary;
+mod model;
 
 extern crate csv;
 extern crate serde;
 // This lets us write `#[derive(Deserialize)]`.
 //#[macro_use]
 extern crate serde_derive;
+
 use csv::Error;
 use std::{fs, path::PathBuf};
 use structopt::StructOpt;
@@ -47,9 +48,8 @@ fn main() -> Result<(), Error> {
             amount: record[AMOUNT].parse::<f32>().unwrap(),
             check_number: String::from(&record[CHECK_NUMBER]),
             raw_payee: String::from(&record[RAW_PAYEE]),
-            payee: String::from("payee"),
+            payee: BankStatement::get_payee(String::from(&record[RAW_PAYEE])).to_string(),
             category: String::from("category"),
-
         };
         bank_records.push(bank_row)
     }
@@ -59,7 +59,7 @@ fn main() -> Result<(), Error> {
         "len of bank records capacity is: {}",
         bank_records.capacity()
     );
-    println!("{:?}", bank_records[12].category);
+    println!("{:?}", bank_records[0].payee);
     println!("$ {}", bank_records[12].dollar_amount());
 
     Ok(())

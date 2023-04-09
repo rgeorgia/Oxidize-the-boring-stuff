@@ -28,7 +28,11 @@ impl BankStatement {
     pub fn dollar_amount(&self) -> String {
         format!("{0:.2}", self.amount)
     }
-    pub fn get_payee(raw_payee: String) -> String {
-        "payee".to_string()
+    pub fn get_payee(raw_payee: String) -> &'static str {
+        if raw_payee.contains("FOOD LION") {
+            "FOOD LION"
+        } else {
+            "PAYEE"
+        }
     }
 }
