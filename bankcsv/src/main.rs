@@ -49,7 +49,7 @@ fn main() -> Result<(), Error> {
             raw_payee: String::from(&record[RAW_PAYEE]),
             payee: String::from("payee"),
             category: String::from("category"),
-            short_name: Some(String::from("short name"))
+
         };
         bank_records.push(bank_row)
     }

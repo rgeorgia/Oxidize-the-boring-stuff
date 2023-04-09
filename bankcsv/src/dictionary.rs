@@ -1,4 +1,3 @@
-use crate::dictionary::Categories::CarPayment;
 /// dictionary.rs - contains a dictionary for short names and categories
 
 #[allow(unused_imports)]
@@ -33,25 +32,26 @@ pub enum Categories {
 
 impl Categories {
     pub fn get_by_name(&self, name: &str) -> Categories {
-        let result = match name {
-            "FOOD LION" | "KROGER" | "KROGERS"=> Categories::Groceries,
+        match name {
+            "FOOD LION" | "KROGER" | "KROGERS" => Categories::Groceries,
             "PENN NATIONAL" | "HOME SHIELD" => Categories::Insurance,
-            "DUNKIN" | "DD" | "EMERALD COMMONS" | "FOOD COURT" |"CRACKER BARREL" => Categories::Entertainment,
+            "DUNKIN" | "DD" | "EMERALD COMMONS" | "FOOD COURT" | "CRACKER BARREL" => {
+                Categories::Entertainment
+            }
             "LIQUORS" | "ABC" => Categories::Liquor,
             "BRIDGECREST" => Categories::CarPayment,
             "CVS" => Categories::Prescriptions,
-            "WAL-MART"|"DOLLAR GENERAL" => Categories::HouseHold,
+            "WAL-MART" | "DOLLAR GENERAL" => Categories::HouseHold,
             "PAYROLL" => Categories::Pay,
             "CHASE" | "VISA" => Categories::CreditCard,
             "AMERICAN FUNDS" => Categories::Investments,
-                "ANCIENT FAITH" => Categories::Giving,
+            "ANCIENT FAITH" => Categories::Giving,
             "CHECK" => Categories::Check,
-                "CONSUMER CELLULAR" => Categories::Subscriptions,
+            "CONSUMER CELLULAR" => Categories::Subscriptions,
             "DUKE ENERGY" => Categories::Utilities,
-                "MORTGAGE" => Categories::Mortgage,
+            "MORTGAGE" => Categories::Mortgage,
             "ZIPS" => Categories::Gas,
             _ => Categories::Other,
-        };
-        result
+        }
     }
 }
