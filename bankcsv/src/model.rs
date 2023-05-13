@@ -1,4 +1,4 @@
-///model.rs - module that models the data
+/// model.rs - module that models the data
 
 #[allow(dead_code)]
 pub enum PaymentType {
@@ -7,7 +7,6 @@ pub enum PaymentType {
     Transfer,
 }
 
-#[allow(dead_code)]
 #[derive(Debug)]
 pub struct BankStatement {
     pub date: String,
