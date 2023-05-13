@@ -19,3 +19,4 @@ payee-list.txt
 .fake
 .ionide
 .vscode/
+*.code-workspace
