@@ -15,6 +15,9 @@ Cargo.lock
 Checking1.csv
 payee-list.txt
 .idea/
+*.iml
 
 .fake
 .ionide
+.vscode/
+*.code-workspace
