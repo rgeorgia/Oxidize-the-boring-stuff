@@ -23,7 +23,7 @@ pub struct BankStatement {
 }
 
 impl Hash for BankStatement {
-    fn hash<H: std::hash::Hasher>(&self, state: &mut H) {
+    fn hash<H: Hasher>(&self, state: &mut H) {
         // need to convert amount from f64 to string because f64 does not have a hash trait
         self.date.hash(state);
         self.amount.to_string().hash(state);
