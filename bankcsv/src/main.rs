@@ -1,7 +1,4 @@
 mod bank_statement;
-use std::error::Error;
-use std::process;
-use csv;
 
 fn read_from_file(path: &str) -> Result<(), Box<dyn Error>> {
     let mut reader = csv::Reader::from_path(path)?;
@@ -13,8 +10,5 @@ fn read_from_file(path: &str) -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 fn main() {
-    if let Err(e) = read_from_file("./data/checking_with_header.csv") {
-        println!("Error reading file: {}", e);
-        process::exit(1);
-    }
+    println!("Bank csv");
 }
