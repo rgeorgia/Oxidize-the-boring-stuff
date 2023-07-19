@@ -1,13 +1,16 @@
 mod bank_statement;
-use std::error::Error;
-use std::process;
+use bank_statement::BankStatement;
 use csv;
+use std::error::Error;
+use std::{fs, process};
 
 fn read_from_file(path: &str) -> Result<(), Box<dyn Error>> {
-    let mut reader = csv::Reader::from_path(path)?;
-    for result in reader.records(){
-        let record = result?;
-        println!("{:?}", record)
+    let contents = fs::read_to_string(path).expect("file missing");
+    let mut reader = csv::Reader::from_reader(contents.as_bytes());
+
+    for result in reader.deserialize() {
+        let record: BankStatement = result?;
+        println!("{:?}", record.amount);
     }
 
     Ok(())
