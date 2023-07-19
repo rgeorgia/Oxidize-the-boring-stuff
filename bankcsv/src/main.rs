@@ -4,7 +4,8 @@ use csv;
 use std::error::Error;
 use std::{fs, process};
 
-//https://rust-lang-nursery.github.io/rust-cookbook/encoding/csv.html
+// https://rust-lang-nursery.github.io/rust-cookbook/encoding/csv.html
+// https://doc.rust-lang.org/book/ch12-02-reading-a-file.html
 
 fn read_from_file(path: &str) -> Result<(), Box<dyn Error>> {
     let contents = fs::read_to_string(path).expect("file missing");
