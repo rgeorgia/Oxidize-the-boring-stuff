@@ -14,7 +14,7 @@ fn read_from_file(path: &str) -> Result<(), Box<dyn Error>> {
     for result in reader.deserialize() {
         let record: BankStatement = result?;
         if record.check_number != None {
-            println!("{:?}", record.check_number.unwrap());
+            println!("{}", record.check_number.unwrap());
         }
     }
 
