@@ -19,7 +19,8 @@ pub struct BankStatement {
     pub date: String,
     pub amount: f64,
     pub cleared: String,
-    pub check_number: Option<String>,
+    #[serde(deserialize_with = "csv::invalid_option")]
+    pub check_number: Option<u64>,
     pub raw_payee: String,
     // pub payee: String,
     // pub category: String,
