@@ -10,11 +10,12 @@ use std::fs;
 fn bank_records(contents: String) -> Result<Vec<BankStatement>, Box<dyn Error>> {
     let mut records: Vec<BankStatement> = Vec::new();
     let mut reader = csv::Reader::from_reader(contents.as_bytes());
-    let index = 1;
+    let mut index = 0;
     for record in reader.records() {
         let record = record?;
+        index = index + 1;
         records.push(BankStatement {
-            id: index + 1,
+            id: index,
             date: record[RecordIndex::Date as usize].to_string(),
             amount: record[RecordIndex::Amount as usize].to_string(),
             cleared: record[RecordIndex::Cleared as usize].to_string(),
@@ -33,7 +34,7 @@ fn main() {
     match records {
         Ok(r) => {
             for record in r.iter() {
-                println!("{}", record.amount) ;
+                println!("{}: {}",record.id,record.amount) ;
             }
         },
         Err(e) => println!("Error parsing integer: {}", e),
