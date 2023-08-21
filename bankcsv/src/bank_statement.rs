@@ -17,8 +17,6 @@ pub enum RecordIndex {
     Cleared = 2,
     CheckNumber = 3,
     RawPayee = 4,
-    // Payee = 6,
-    // Category = 7,
 }
 
 #[derive(Debug)]
@@ -26,7 +24,7 @@ pub struct BankStatement {
     // id will be a hash of date, amount and raw_payee
     // check_number is an Option because there a lot of times when check_number
     // will be an empty string
-    pub id: i64,
+    pub id: u64,
     pub date: String,
     pub amount: String,
     pub cleared: String,
@@ -51,6 +49,7 @@ pub struct BankStatement {
 //         t.hash(&mut s);
 //         s.finish()
 //     }
+// }
 
 //     fn set_payee(&self) {
 //         // search self.raw_payee for a regex match, if match set self.payee
