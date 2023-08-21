@@ -1,28 +1,41 @@
 mod bank_statement;
-use bank_statement::BankStatement;
+use bank_statement::{BankStatement, RecordIndex};
 use csv;
 use std::error::Error;
-use std::{fs, process};
+use std::fs;
 
 // https://rust-lang-nursery.github.io/rust-cookbook/encoding/csv.html
 // https://doc.rust-lang.org/book/ch12-02-reading-a-file.html
 
-fn read_from_file(path: &str) -> Result<(), Box<dyn Error>> {
-    let contents = fs::read_to_string(path).expect("file missing");
+fn bank_records(contents: String) -> Result<Vec<BankStatement>, Box<dyn Error>> {
+    let mut records: Vec<BankStatement> = Vec::new();
     let mut reader = csv::Reader::from_reader(contents.as_bytes());
-
-    for result in reader.deserialize() {
-        let record: BankStatement = result?;
-        if record.check_number != None {
-            println!("{}", record.check_number.unwrap());
-        }
+    let index = 1;
+    for record in reader.records() {
+        let record = record?;
+        records.push(BankStatement {
+            id: index + 1,
+            date: record[RecordIndex::Date as usize].to_string(),
+            amount: record[RecordIndex::Amount as usize].to_string(),
+            cleared: record[RecordIndex::Cleared as usize].to_string(),
+            check_number: record[RecordIndex::CheckNumber as usize].to_string(),
+            raw_payee: record[RecordIndex::RawPayee as usize].to_string(),
+        });
     }
 
-    Ok(())
+    Ok(records)
 }
+
 fn main() {
-    if let Err(e) = read_from_file("./data/checking_with_header.csv") {
-        println!("Error reading file: {}", e);
-        process::exit(1);
+    let file_name: String = String::from("./data/Checking0723.csv");
+    let contents = fs::read_to_string(file_name).expect("Should have been able to read the file");
+    let records = bank_records(contents);
+    match records {
+        Ok(r) => {
+            for record in r.iter() {
+                println!("{}", record.amount) ;
+            }
+        },
+        Err(e) => println!("Error parsing integer: {}", e),
     }
 }

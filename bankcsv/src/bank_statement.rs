@@ -1,5 +1,4 @@
 // use serde::Deserialize;
-use serde_derive::Deserialize;
 // use std::collections::hash_map::DefaultHasher;
 // use std::hash::{Hash, Hasher};
 
@@ -10,17 +9,28 @@ pub enum PaymentType {
     Transfer,
 }
 
-#[derive(Debug, Deserialize)]
+// RecordIndex is an enum that maps to each field of the BankStatement struct
+// I explicitly call out each number for readbility
+pub enum RecordIndex {
+    Date = 0,
+    Amount = 1,
+    Cleared = 2,
+    CheckNumber = 3,
+    RawPayee = 4,
+    // Payee = 6,
+    // Category = 7,
+}
+
+#[derive(Debug)]
 pub struct BankStatement {
     // id will be a hash of date, amount and raw_payee
     // check_number is an Option because there a lot of times when check_number
     // will be an empty string
-    // pub id: Option<u64>,
+    pub id: i64,
     pub date: String,
-    pub amount: f64,
+    pub amount: String,
     pub cleared: String,
-    #[serde(deserialize_with = "csv::invalid_option")]
-    pub check_number: Option<u64>,
+    pub check_number: String,
     pub raw_payee: String,
     // pub payee: String,
     // pub category: String,
