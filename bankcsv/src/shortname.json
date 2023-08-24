@@ -1,0 +1,32 @@
+[
+    {
+        "search_string": "BARNES AND NOBL",
+        "category": "Books",
+        "short_name": "Barns-n-Noble"
+    },
+    {
+        "search_string": "BOOKS A MILL",
+        "category": "Books",
+        "short_name": "Books A Million"
+    },
+    {
+        "search_string": "ANCIENT FAITH",
+        "category": "Giving",
+        "short_name": "Ancient Faith"
+    },
+    {
+        "search_string": "BRIDGECREST",
+        "category": "Investment",
+        "short_name": "Bridgecrest"
+    },
+    {
+        "search_string": "AMERICAN FUNDS",
+        "category": "Investment",
+        "short_name": "American Funds"
+    },
+    {
+        "search_string": "ABC",
+        "category": "Spirits",
+        "short_name": "ABC"
+    }
+]

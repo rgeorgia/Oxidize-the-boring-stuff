@@ -1,0 +1,84 @@
+{
+    "Groceries" :[
+        "FOOD LION",
+        "INGLES",
+        "KROGER",
+        "WAL-MART"
+    ],
+    "Amazon" : [
+        "AMAZON"
+    ],
+    "Books" :[
+        "Barnes and Nobl",
+        "BOOKS A MILLION"
+    ],
+    "Credit Card": [
+        "Chase",
+        "VISA"
+    ],
+    "Deposit": [
+        "Wells Fargo"
+    ],
+    "Dining": [
+        "Bob Evans",
+        "Dunkin",
+        "Emerald Commons",
+        "Food Court",
+        "Outback"
+    ],
+    "Entertainment": [
+        "Bricktree",
+        "Untapped",
+        "Zips"
+    ],
+    "Giving": [
+        "Ancient Faith",
+        "Calvary Baptist",
+        "St Dorthy"
+    ], 
+    "House Hold": [
+        "Hobbylobb",
+        "Lowes Home",
+        "Saines", 
+        "Dollar General"
+    ],
+    "Insurance": [
+        "HOMESHIELD",
+        "PENN NATIONAL" 
+    ],
+    "Investment":[
+        "American Funds",
+        "Bridgecrest"
+    ],
+    "Morgage": [
+        "MORTGAGE" 
+    ],
+    "Perscriptsion":[
+        "CVS",
+        "Pharmacy"
+    ],
+    "Spirits": [
+        "ABC BOA"
+    ],
+    "Subscription": [
+        "Apple",
+        "Digital Ocean ",
+        "Godaddy",
+        "Hulu",
+        "Netflix",
+        "Prime",
+        "Roku",
+        "Spotify"
+    ],
+    "Utilities": [
+        "Spectrum",
+        "Consumer Cellular",
+        "Duke Energy"
+    ],
+    "Cell Phone": [
+        "Consuer Cellular"
+    ], 
+    "Cable": [
+        "Spectrum"
+    ]
+}

@@ -1,6 +1,3 @@
-title = "TOML file for bankcsv program."
-# This file contains data used by the bankcsv file, like category names, short names, et al
-
 Food_Lion = "Groceries"
 Ingles = "Groceries"
 CVS = "Perscriptsion"
@@ -22,7 +19,7 @@ KROGER = "Groceries"
 HOMESHIELD = "Insurance"
 PENN_NATIONAL = "Insurance"
 Ancient_Faith = "Giving"
-DUKE_ENERGY_ = "Utilities"
+DUKE_ENERGY = "Utilities"
 BOOKS_A_MILLION = "Books"
 Barnes_and_Nobl = "Books"
 CHASE_CREDIT = "Credit Card"
