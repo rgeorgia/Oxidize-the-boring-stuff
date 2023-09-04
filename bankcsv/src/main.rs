@@ -1,6 +1,7 @@
 mod bank_statement;
 use bank_statement::{BankStatement, RecordIndex};
 use csv;
+use regex::Regex;
 use std::error::Error;
 use std::fs;
 
@@ -27,6 +28,11 @@ fn bank_records(contents: String) -> Result<Vec<BankStatement>, Box<dyn Error>> 
     Ok(records)
 }
 
+fn search_string(pattern: &str, text: &str) -> bool {
+    let regex = Regex::new(pattern).unwrap();
+    regex.is_match(text)
+}
+
 fn main() {
     let file_name: String = String::from("./data/Checking0723.csv");
     let contents = fs::read_to_string(file_name).expect("Should have been able to read the file");
@@ -34,9 +40,9 @@ fn main() {
     match records {
         Ok(r) => {
             for record in r.iter() {
-                println!("{}: {}",record.id,record.amount) ;
+                println!("{}: {}", record.id, record.amount);
             }
-        },
+        }
         Err(e) => println!("Error parsing integer: {}", e),
     }
 }
