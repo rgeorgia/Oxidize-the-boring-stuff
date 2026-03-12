@@ -1,21 +1,69 @@
 # Welcome to the Oxidize-the-boring-stuff
 
-Oxidize the boring stuff is my attempt to learn [Rust](https://www.rust-lang.org/) while creating useful apps. The idea was taken from the very popular book called [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) by Al Sweigart.
+Oxidize the boring stuff is my attempt to learn [Rust](https://www.rust-lang.org/). I will be following a path based on a very popular book called [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) by Al Sweigart.
 
-In his book Al ramps up the reader to a proficient level of [Python](https://www.python.org/). He then walks them through creating scripts (programs? yes.) that meet some every day challenges. Ah! Learn a language **and** create something useful. That book covers these subjects:
+I want to take each concept he covers and summarize it in Rust. I want to write all the programs and projects using Rust.
 
-- Search for text in a file or across multiple files
-- Create, update, move, and rename files and folders
-- Search the Web and download online content
-- Update and format data in Excel spreadsheets of any size
-- Split, merge, watermark, and encrypt PDFs
-- Send reminder emails and text notifications
-- Fill out online forms
+## The Automate Book
 
-That is what I want to do... well kind of. Maybe a few modifications.
+#### Chapter 2: IF-ELSE AND FLOW CONTROL
 
-First. I less than a noob when it comes to Rust. In fact, I can't even spell Wrust without Google. Second, I *want* to try to complete, in Rust, all the exercises listed from Al's book. However, there maybe a few itches I have that I will tackle.
+- Conditions
+- Code blocks (scope?)
+- if-else
+- Programs:
+    - Opposite Day
+    - Dishonest Capacity Calculator
+
+#### Chapter 3: LOOPS
+
+- while (rust equivalent)
+- for (rust equivalent)
+- Ending early (exit)
+- Programs:
+    - Guess the Number
+    - Rock, Paper, Scissors
+
+#### Chapter 4: FUNCTIONS
+
+- Creating
+- Arguments and Parameters
+- Returns
+- *The Call Stack* (?)
+- Scope
+- Life Times (?)
+- Exceptions
+- Programs:
+    - Zigzag
+    - Spike
+    - The Collatz Sequence
+    - Input Validation (?)
+
+#### Chapter 5: DEBUGGING
+
+#### Chapter 6: Arrays, Tuples, Slices, Vecs
+
+#### Chapter 7:  Structs, Enums
+
+#### Chapter 8: Strings and string slices (str)
+
+#### PROJECTS:
+
+- Project 1: Interactive Chessboard Simulator
+- Project 2: Add Bullets to Wiki Markup
+- Project 3: Extract Contact Information from Large Documents
+- Project 4: Generate Random Quiz Files
+- Project 5: Back Up a directory into a ZIP file
+- Project 6: Use *web browser* cargo module in a program
+- Project 7: Open Search Results
+- Project 8: Download XKCD comic
+- Project 9: Gather Census Stats
+- Project 10: Update a Spreadsheet
+- Project 11: Fake Blockchain Cryptocurrency Scam
+- Project 12: Combine Selected Pages From Many PDFs
+- Project 13: Remove the Header from CSV Files
+- Project 14: Stop watch
+- Project 15: Countdown
+- Project 16: Add a Logo
 
 ## Oxidize the boring stuff outline
-- Read csv file downloaded from your bank, then write csv or excel file
-- Read csv (or Excel) file and export to sqlite database
